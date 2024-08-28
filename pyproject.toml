@@ -1,0 +1,15 @@
+[project]
+name = "comfyui_hf_servelress_inference"
+description = "Huggingface Api Serverless request"
+version = "1.0.0"
+license = {file = "LICENSE"}
+dependencies = ["huggingface_hub"]
+
+[project.urls]
+Repository = "https://github.com/alexgenovese/ComfyUI_HF_Servelress_Inference"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI_HF_Servelress_Inference"
+Icon = ""
