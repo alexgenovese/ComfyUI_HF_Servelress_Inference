@@ -1,6 +1,6 @@
 # Huggingface Api Serverless Inference 
 
-It's a simple node that run the inference for a LLM endpoint. 
+It's a node to Enhance any Prompt running the inference of LLM model on the serverless endpoint on Hugginggface. 
 
 Inputs:
 - hf_token: String -- It's the token string 
