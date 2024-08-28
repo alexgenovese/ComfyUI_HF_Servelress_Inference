@@ -1,10 +1,9 @@
 """Session handler"""
 import os
 from huggingface_hub import InferenceClient
-from time import sleep
 
 
-def post(hf_token, repo_id, **kwargs):
+def request(hf_token, repo_id, **kwargs):
 
     if hf_token == "": 
         raise Exception(f"No Huggingface Token provided - found this in ENV {os.environ['HF_AUTH_TOKEN']}")

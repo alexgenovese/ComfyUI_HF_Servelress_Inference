@@ -1,5 +1,5 @@
 import torch
-from .session import post
+from .session import request
 
 class HF_QuestionAnswer:
     @classmethod
@@ -25,7 +25,7 @@ class HF_QuestionAnswer:
                 'context': context,
             },
         }
-        answer = post(hf_token, endpoint, json=json)
+        answer = request(hf_token, endpoint, json=json)
         return (answer, '')
 
 
