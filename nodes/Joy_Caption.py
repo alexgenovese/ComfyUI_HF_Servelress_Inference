@@ -5,7 +5,7 @@ from transformers import  AutoProcessor
 from .utils import tensor2pil
 from torch import nn
 import torch.amp.autocast_mode
-from model_management import get_torch_device
+from comfy.model_management import get_torch_device
 import folder_paths
 
 BASE_COMFYDEPLOY_PATH = "/comfyui/models/"
