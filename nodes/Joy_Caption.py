@@ -101,9 +101,13 @@ class Joy_caption_load:
         text_model.eval()
 
         # Image Adapter
-        adapter_path =  os.path.join(folder_paths.models_dir,"Joy_caption","image_adapter.pt")
+        adapter_path = os.path.join(folder_paths.models_dir, "Joy_caption", "image_adapter.pt")
+        if not os.path.exists(adapter_path):
+            from huggingface_hub import hf_hub_download
+            os.makedirs(os.path.dirname(adapter_path), exist_ok=True)
+            hf_hub_download(repo_id="fancyfeast/joy-caption-pre-alpha", filename="image_adapter.pt", local_dir=os.path.dirname(adapter_path))
 
-        image_adapter = ImageAdapter(clip_model.config.hidden_size, text_model.config.hidden_size) # ImageAdapter(clip_model.config.hidden_size, 4096) 
+        image_adapter = ImageAdapter(clip_model.config.hidden_size, text_model.config.hidden_size) # ImageAdapter(clip_model.config.hidden_size, 4096)
         image_adapter.load_state_dict(torch.load(adapter_path, map_location="cpu"))
         adjusted_adapter =  image_adapter #AdjustedImageAdapter(image_adapter, text_model.config.hidden_size)
         adjusted_adapter.eval()
